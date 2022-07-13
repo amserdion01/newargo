@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guri
+  name: guri-golang
 spec:
   project: default
   source:
-    repoURL: https://github.com/amserdion01/argogolang.git
+    repoURL: https://github.com/amserdion01/newargo.git
     targetRevision: main
     path: golang
   destination:
