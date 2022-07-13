@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/amserdion01/argogolang.git
+    repoURL: https://github.com/amserdion01/newargo.git
     targetRevision: main
     path: argo
   destination:
