@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Aplication
+metadata:
+  name: argo-postgres-yaml
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/amserdion01/argogolang
+    targetRevesion: main
+    path: /postgres
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argogolangyaml
+
+  syncPolicy: 
+    syncOptions:
+      - CreateNamespace=true
+  
+    automated:
+      selfHeal: true
+      prune: true
