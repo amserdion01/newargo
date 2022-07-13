@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-deployment
+  labels:
+    app: golang
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: golang
+  template:
+    metadata:
+      labels:
+        app: golang
+    spec:
+      containers:
+      - name: golang
+        image: amserdion/golangimg:1.1
+        resources:
+          limits:
+            cpu: "250m"
+            memory: "250Mi"
+          requests: 
+            memory: "150Mi"
+            cpu: "100m"
+        ports:
+          - containerPort: 8081
+        env:
+          - name: DATABASE_URL
+            valueFrom: 
+              secretKeyRef:
+                key: url
+                name: db-secret
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8081
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          failureThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8081
+          initialDelaySeconds: 0
+          periodSeconds: 10
+
+
+       
+       
