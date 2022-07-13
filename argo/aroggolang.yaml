@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gurin
+  name: guri
 spec:
   project: default
   source:
