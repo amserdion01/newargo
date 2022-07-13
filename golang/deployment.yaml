@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: golang-deployment
   labels:
-    app: golang
+    app: guri
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: golang
+      app: guri
   template:
     metadata:
       labels:
-        app: golang
+        app: guri
     spec:
       containers:
-      - name: golang
+      - name: guri
         image: amserdion/golangimg:1.1
         resources:
           limits:
