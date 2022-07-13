@@ -29,9 +29,9 @@ spec:
         env:
           - name: DATABASE_URL
             valueFrom: 
-              secretKeyRef:
-                key: test
-                name: db-secret
+              configMapKeyRef:
+                key: db_url
+                name: data-config
         readinessProbe:
           httpGet:
             path: /
