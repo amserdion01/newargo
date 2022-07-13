@@ -31,7 +31,7 @@ spec:
             valueFrom: 
               configMapKeyRef:
                 key: db_url
-                name: data-config
+                name: map
         readinessProbe:
           httpGet:
             path: /
