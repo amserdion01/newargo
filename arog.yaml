@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Aplication
 metadata:
-  name: argo-golang-yaml
+  name: argo-yaml
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/amserdion01/argogolang
+    repoURL: https://github.com/amserdion01/argogolang.git
     targetRevesion: main
-    path: .
+    path: argo
   destination:
     server: https://kubernetes.default.svc
     namespace: argogolangyaml
