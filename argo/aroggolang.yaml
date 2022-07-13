@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/amserdion01/argogolang.git
-    targetRevesion: main
+    targetRevision: main
     path: golang
   destination:
     server: https://kubernetes.default.svc
